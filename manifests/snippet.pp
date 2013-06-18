@@ -6,8 +6,6 @@
 #
 #   dotfiles::snippet { 'foo': }
 define dotfiles::snippet($ensure = present) {
-  require dotfiles
-
   file { "${dotfiles::home}/.snippets/${name}.snippets":
     ensure  => $ensure,
     source  => "puppet:///modules/dotfiles/bin/${name}.snippets",

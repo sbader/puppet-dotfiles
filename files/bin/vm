@@ -1,0 +1,58 @@
+#!/bin/sh
+
+set -e
+
+error() {
+	printf "%s: %s\n" $"ERROR" "$1"
+}
+
+warning() {
+	printf "%s: %s\n" $"WARNING" "$1"
+}
+
+info() {
+	printf "%s: %s\n" $"INFO" "$1"
+}
+
+ACTION=""
+ADDITIONAL_ACTION=""
+
+case $1 in
+  start | s )
+    shift
+    ACTION="startvm"
+    ADDITIONAL_ACTION="--type headless"
+    ;;
+  stop | x )
+    shift
+    ACTION="controlvm"
+    ADDITIONAL_ACTION="poweroff"
+    ;;
+  pause | p )
+    shift
+    ACTION="controlvm"
+    ADDITIONAL_ACTION="pause"
+    ;;
+  resume| r )
+    shift
+    ACTION="controlvm"
+    ADDITIONAL_ACTION="resume"
+    ;;
+esac
+
+if [[ -n "$1" ]]; then
+  VMNAME=$1
+elif [[ -n "$DEFAULTVM" ]]; then
+  VMNAME=$DEFAULTVM
+else
+  error "No default vm"
+fi
+
+command="VBoxManage $ACTION $VMNAME"
+
+if [[ -n "$ADDITIONAL_ACTION" ]]; then
+  command="$command $ADDITIONAL_ACTION"
+fi
+
+echo $command
+eval $command

@@ -1,0 +1,48 @@
+# Configs
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config secondsBetweenRepeat 0.1
+config checkDefaultsOnLoad true
+config focusCheckWidthMax 3000
+
+# Monitor Aliases
+alias mon-24    1920x1200
+alias mon-air   1440x900
+
+# Position Aliases
+alias 1-main  move screenOriginX;screenOriginY screenSizeX;screenSizeY ${mon-24}
+alias 1-70    move screenOriginX;screenOriginY screenSizeX*0.7;screenSizeY ${mon-24}
+alias 1-30    move screenOriginX+(screenSizeX*0.7);screenOriginY screenSizeX*0.30;screenSizeY ${mon-24}
+alias 1-50l   move screenOriginX;screenOriginY screenSizeX/2;screenSizeY ${mon-24}
+alias 1-50r   move screenOriginX+(screenSizeX/2);screenOriginY screenSizeX/2;screenSizeY ${mon-24}
+
+alias 1-full-air move screenOriginX;screenOriginY screenSizeX;screenSizeY ${mon-air}
+alias 1-70-air move screenOriginX;screenOriginY screenSizeX;screenSizeY ${mon-air}
+
+# Key aliases
+alias com   ctrl;alt;cmd
+alias cc    ctrl;cmd
+alias hyper ctrl;alt;cmd;shift
+
+# 1 Monitor Dev layout
+layout 1go     'iTerm'          ${1-main}
+layout 1go     'Google Chrome'  ${1-main}
+layout 1go     'MacVim'         ${1-main}
+layout 1go     'Textmate'       ${1-70}
+
+layout 1air    'iTerm'          ${1-full-air}
+layout 1air    'Google Chrome'  ${1-full-air}
+layout 1air    'MacVim'         ${1-full-air}
+layout 1air    'Textmate'       ${1-70-air}
+
+# Default Layouts
+default 1go  resolutions:${mon-24}
+default 1air  resolutions:${mon-air}
+
+# Basic location Bindings
+bind backslash:${hyper} ${1-main}
+bind [:${hyper} ${1-50l}
+bind ]:${hyper} ${1-50r}
+bind pad1:ctrl layout 1go
+bind pad1:ctrl layout 1air

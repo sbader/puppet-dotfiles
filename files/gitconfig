@@ -1,0 +1,25 @@
+[user]
+  name = Scott Bader
+  email = sb@scottbader.org
+[alias]
+  co = checkout
+  s  = status
+  l  = log
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[core]
+  excludesfile = /opt/boxen/config/git/gitignore
+  editor = vi -f
+	autocrlf = false
+[apply]
+  whitespace = nowarn
+[format]
+  pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+[github]
+  user = sbader
+[credential]
+  helper = /opt/boxen/bin/boxen-git-credential
+[hub]
+  protocol = https

@@ -1,0 +1,7 @@
+set background=dark
+color candy
+set guifont=Source\ Code\ Pro:h13
+set lines=74 columns=238
+
+" No toolbar
+set guioptions-=T

@@ -71,6 +71,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'skammer/vim-css-color'
 Bundle 'spolu/dwm.vim'
+Bundle 'wincent/Command-T'
 
 " -- Utilities --
 Bundle 'mileszs/ack.vim'
@@ -152,10 +153,16 @@ vmap <leader><leader> :TComment<cr>
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_extensions = ['funky']
+let g:ctrlp_command = '<c-d>'
 let g:ctrlp_max_height = 20
 let g:ctrlp_by_filename = 1
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard']
 
 nnoremap <C-t> :CtrlPFunky<Cr>
+
+" ================  Command-T  ==================
+
+nnoremap <C-p> :CommandT<Cr>
 
 " ================  UltiSnips  ==================
 

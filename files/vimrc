@@ -14,7 +14,6 @@ set noswapfile                  " Disable swap files
 set visualbell                  " No sounds
 set noballooneval               " Disable the pesky ri errors in ruby files
 set autoread                    " Autoread files with changes (No more popup)
-" set autochdir                   " Directory changes based on current file
 
 " ================  Leader  ====================
 
@@ -60,7 +59,8 @@ Bundle 'gmarik/vundle'
 Bundle 'flazz/vim-colorschemes'
 
 " -- Tools --
-" Bundle 'kien/ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-fugitive'
@@ -68,9 +68,9 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'vim-scripts/Align'
 Bundle 'Raimondi/delimitMate'
-" Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'skammer/vim-css-color'
-Bundle 'Shougo/unite.vim'
+Bundle 'spolu/dwm.vim'
 
 " -- Utilities --
 Bundle 'mileszs/ack.vim'
@@ -91,8 +91,6 @@ Bundle 'jnwhiteh/vim-golang'
 " -- Syntax Checker --
 Bundle 'scrooloose/syntastic'
 Bundle 'tomtom/quickfixsigns_vim'
-
-Bundle 'spolu/dwm.vim'
 
 filetype plugin indent on
 syntax enable
@@ -157,8 +155,7 @@ let g:ctrlp_extensions = ['funky']
 let g:ctrlp_max_height = 20
 let g:ctrlp_by_filename = 1
 
-nmap <leader>p :CtrlP<CR>
-nmap <C-t> :CtrlPBufTag<CR>
+nnoremap <C-t> :CtrlPFunky<Cr>
 
 " ================  UltiSnips  ==================
 
@@ -197,17 +194,3 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " === Pretty Print JSON
 " Call as :PrettPrintJSON
 command! PrettyPrintJSON execute "%!python -m json.tool" | call StripWhitespace()
-
-" ================  Unite  ==================
-let g:unite_source_history_yank_enable = 1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <C-p> :Unite -buffer-name=files -start-insert file buffer<cr>
-
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
-  " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-endfunction

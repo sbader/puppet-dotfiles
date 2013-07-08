@@ -72,6 +72,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'skammer/vim-css-color'
 Bundle 'spolu/dwm.vim'
 Bundle 'wincent/Command-T'
+Bundle 'mattn/zencoding-vim'
 
 " -- Utilities --
 Bundle 'mileszs/ack.vim'

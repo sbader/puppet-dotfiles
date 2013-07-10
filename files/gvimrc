@@ -1,5 +1,5 @@
 set background=dark
-color candy
+color candy-sbader
 set guifont=Source\ Code\ Pro:h13
 set lines=74 columns=238
 

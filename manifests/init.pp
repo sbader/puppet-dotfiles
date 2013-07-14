@@ -6,7 +6,7 @@
 class dotfiles {
   $home = "/Users/${::boxen_user}"
 
-  dotfile { ['gitignore', 'vimrc', 'zshrc', 'gitconfig', 'gvimrc', 'hushlogin', 'slate', 'tmux.conf']: }
+  dotfile { ['gitignore', 'vimrc', 'zshrc', 'gitconfig', 'gvimrc', 'hushlogin', 'slate', 'tmux.conf', 'powconfig']: }
 
   file { "${home}/.bin":
     ensure => 'directory'

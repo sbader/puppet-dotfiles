@@ -72,7 +72,6 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'skammer/vim-css-color'
 Bundle 'spolu/dwm.vim'
 Bundle 'wincent/Command-T'
-Bundle 'mattn/zencoding-vim'
 
 " -- Utilities --
 Bundle 'mileszs/ack.vim'
@@ -89,6 +88,7 @@ Bundle 'othree/html5.vim'
 Bundle 'saltstack/salt-vim'
 Bundle 'rodjek/vim-puppet'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'cakebaker/scss-syntax.vim'
 
 " -- Syntax Checker --
 Bundle 'scrooloose/syntastic'
@@ -99,15 +99,15 @@ syntax enable
 
 set omnifunc=syntaxcomplete#Complete
 
-" ================  Netrw  ==================
-
-cmap E<CR> Ex<CR> " Syntastic :E workaround
-nnoremap <C-e> :Explore<CR>:9<CR> " Open Netrw dir listing and goto 9th line
-
 " ================  Window Switching  ==================
 
 set splitbelow
 set splitright
+
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 
 " ================  Searching  ==================
 :nnoremap <silent> , :nohlsearch<Bar>:echo<CR>
@@ -178,6 +178,8 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['html'] }
 let g:syntastic_quiet_warnings = 1
 let g:syntastic_phpcs_disable = 1
+
+cmap E<CR> Ex<CR> " Syntastic :E workaround
 
 " ================  Additional Commands  ==================
 

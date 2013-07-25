@@ -39,6 +39,8 @@ setopt always_to_end
 
 WORDCHARS=''
 
+zmodload -i zsh/complist
+
 autoload -U compinit
 compinit
 

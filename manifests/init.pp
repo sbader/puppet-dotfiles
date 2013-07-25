@@ -30,4 +30,11 @@ class dotfiles {
     source  => "puppet:///modules/dotfiles/candy-sbader.vim",
     require => File["${dotfiles::home}/.vim/colors"]
   }
+
+  file { "${home}/.zsh/completions":
+    ensure => 'directory',
+    recurse => true
+  }
+
+  zsh_completion { ['hub']: }
 }

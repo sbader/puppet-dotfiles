@@ -89,6 +89,7 @@ Bundle 'othree/html5.vim'
 Bundle 'saltstack/salt-vim'
 Bundle 'rodjek/vim-puppet'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'cakebaker/scss-syntax.vim'
 
 " -- Syntax Checker --
 Bundle 'scrooloose/syntastic'

@@ -102,6 +102,7 @@ set omnifunc=syntaxcomplete#Complete
 
 " ================  Netrw  ==================
 
+let g:netrw_list_hide = '.*\.swp$,.*\.sass-cache,.*\.bundle,.*\.git,.DS_Store'
 cmap E<CR> Ex<CR> " Syntastic :E workaround
 nnoremap <C-e> :Explore<CR>:9<CR> " Open Netrw dir listing and goto 9th line
 
@@ -111,8 +112,8 @@ set splitbelow
 set splitright
 
 " ================  Searching  ==================
-:nnoremap <silent> , :nohlsearch<Bar>:echo<CR>
 
+:nnoremap <silent> , :nohlsearch<Bar>:echo<CR>
 
 " ================  File Types  ==================
 

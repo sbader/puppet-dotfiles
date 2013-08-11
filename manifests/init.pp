@@ -31,6 +31,10 @@ class dotfiles {
     require => File["${dotfiles::home}/.vim/colors"]
   }
 
+  file { "${home}/.zsh":
+    ensure => 'directory'
+  }
+
   file { "${home}/.zsh/completions":
     ensure => 'directory',
     recurse => true

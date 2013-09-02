@@ -73,6 +73,7 @@ Bundle 'skammer/vim-css-color'
 Bundle 'spolu/dwm.vim'
 Bundle 'wincent/Command-T'
 Bundle 'mattn/zencoding-vim'
+Bundle 'scrooloose/nerdtree'
 
 " -- Utilities --
 Bundle 'mileszs/ack.vim'
@@ -103,7 +104,6 @@ set omnifunc=syntaxcomplete#Complete
 " ================  Netrw  ==================
 
 cmap E<CR> Ex<CR> " Syntastic :E workaround
-nnoremap <C-e> :Explore<CR>:9<CR> " Open Netrw dir listing and goto 9th line
 
 " ================  Window Switching  ==================
 
@@ -122,7 +122,7 @@ if has("autocmd")
   autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd FileType html setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 
   au BufRead,BufNewFile *.hbs.erb set filetype=handlebars
 endif
@@ -201,3 +201,8 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " === Pretty Print JSON
 " Call as :PrettPrintJSON
 command! PrettyPrintJSON execute "%!python -m json.tool" | call StripWhitespace()
+
+" ================  NerdTree  ==================
+
+let g:NERDTreeMapJumpNextSibling = "<C-whythefuckwouldnerdtreeoverridec-j"
+let g:NERDTreeMapJumpPrevSibling = "<C-whythefuckwouldnerdtreeoverridec-k"

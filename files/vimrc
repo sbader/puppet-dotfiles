@@ -47,6 +47,10 @@ set listchars+=extends:>          " The character to show in the last column whe
 set listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
 
+" =============== Wildignore ==================
+
+set wildignore+=*.o,*.obj,.git,node_modules
+
 " ================  Vundle  ====================
 
 filetype off
@@ -103,6 +107,7 @@ set omnifunc=syntaxcomplete#Complete
 
 " ================  Netrw  ==================
 
+let g:netrw_list_hide = '.*\.swp$,.*\.sass-cache,.*\.bundle,.*\.git,.DS_Store'
 cmap E<CR> Ex<CR> " Syntastic :E workaround
 
 " ================  Window Switching  ==================
@@ -111,8 +116,8 @@ set splitbelow
 set splitright
 
 " ================  Searching  ==================
-:nnoremap <silent> , :nohlsearch<Bar>:echo<CR>
 
+:nnoremap <silent> , :nohlsearch<Bar>:echo<CR>
 
 " ================  File Types  ==================
 

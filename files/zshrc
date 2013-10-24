@@ -123,3 +123,7 @@ alias l="ls -lAh"
 alias ll="ls -l"
 alias la='ls -A'
 alias gitx.='gitx .'
+
+if [ -e "$HOME/.localrc" ]; then
+  source "$HOME/.localrc"
+fi

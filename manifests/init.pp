@@ -40,5 +40,9 @@ class dotfiles {
     recurse => true
   }
 
+  file { "${home}/.localrc":
+    ensure => 'present'
+  }
+
   zsh_completion { ['hub']: }
 }

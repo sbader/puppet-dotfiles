@@ -111,7 +111,7 @@ set wildignore+=*.o,*.obj,.git,node_modules
 
 " ================  NERDTree  ==================
 
-nnoremap <C-e> :NERDTreeFocus<CR>
+nnoremap <C-e> :NERDTreeFind<CR>
 
 let g:NERDTreeMapJumpNextSibling = "<C-whythefuckwouldnerdtreeoverridec-j"
 let g:NERDTreeMapJumpPrevSibling = "<C-whythefuckwouldnerdtreeoverridec-k"
@@ -189,8 +189,9 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': ['ruby', 'php', 'javascript', 'css', 'sass', 'scss'],
                            \ 'passive_filetypes': ['html'] }
-let g:syntastic_quiet_warnings = 1
+" let g:syntastic_quiet_warnings = 1
 let g:syntastic_phpcs_disable = 1
+let g:syntastic_check_on_open=1
 
 " ================  Additional Commands  ==================
 

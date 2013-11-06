@@ -92,6 +92,9 @@ Bundle 'rodjek/vim-puppet'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'tpope/vim-haml'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
+Bundle 'nathanaelkane/vim-indent-guides'
 
 " -- Syntax Checker --
 Bundle 'scrooloose/syntastic'

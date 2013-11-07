@@ -109,6 +109,7 @@ set omnifunc=syntaxcomplete#Complete
 " =============== Wildignore ==================
 
 set wildignore+=*.o,*.obj,.git,node_modules
+set wildignore+=coverage,reference,jsdoc
 
 " ================  NERDTree  ==================
 
@@ -192,7 +193,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['html'] }
 " let g:syntastic_quiet_warnings = 1
 let g:syntastic_phpcs_disable = 1
-let g:syntastic_check_on_open=1
 
 " ================  Additional Commands  ==================
 

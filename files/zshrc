@@ -1,9 +1,5 @@
 source /opt/boxen/env.sh
 
-if [[ -f ~/.localrc ]]; then
-  source ~/.localrc
-fi
-
 export PATH="$HOME/.bin:$HOME/bin:$PATH"
 
 fpath=($HOME/.zsh/completions $fpath)
@@ -123,7 +119,8 @@ alias l="ls -lAh"
 alias ll="ls -l"
 alias la='ls -A'
 alias gitx.='gitx .'
+alias myip='curl icanhazip.com'
 
-if [ -e "$HOME/.localrc" ]; then
-  source "$HOME/.localrc"
+if [[ -f ~/.localrc ]]; then
+  source ~/.localrc
 fi

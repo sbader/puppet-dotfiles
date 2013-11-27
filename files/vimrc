@@ -72,7 +72,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'skammer/vim-css-color'
 Bundle 'spolu/dwm.vim'
 Bundle 'wincent/Command-T'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'osyo-manga/vim-over'
 
@@ -194,6 +194,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'passive_filetypes': ['html'] }
 " let g:syntastic_quiet_warnings = 1
 let g:syntastic_phpcs_disable = 1
+let g:syntastic_check_on_open = 1
 
 " ================  over.vim  ==================
 

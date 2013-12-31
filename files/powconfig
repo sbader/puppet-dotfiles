@@ -1,2 +1,2 @@
-export POW_DST_PORT=88
 export PATH="/opt/boxen/rbenv/shims:/opt/boxen/rbenv/bin:$PATH"
+export PATH="/opt/boxen/nodenv/bin:/opt/boxen/nodenv/shims:$PATH"
